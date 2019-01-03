@@ -1,0 +1,4 @@
+*.conf
+config.php
+_config.yml
+splunk-sdk-php-1.0.1
