@@ -3,7 +3,7 @@
 
 Summary: A set of shared object used in many my projects.
 Name: FalonCommon
-Version: 0.1.1
+Version: 0.1.2
 Release: 1%{?dist}
 Group: Development/Libraries
 License: Apache-2.0
@@ -43,6 +43,7 @@ mkdir -p %{buildroot}%{_datadir}/include
 mkdir -p %{buildroot}%{_datadir}/%{bigname}
 install -m0444 ajaxsbmt.js %{buildroot}%{_datadir}/include
 install -m0444 checkAll.js %{buildroot}%{_datadir}/include
+install -m0444 keymail.js %{buildroot}%{_datadir}/include
 install -m0444 pleasewait.gif %{buildroot}%{_datadir}/include
 install -m0444 style.css  %{buildroot}%{_datadir}/include
 # Docs
@@ -56,8 +57,11 @@ install -m0444 README.md %{buildroot}%{_datadir}/%{bigname}/README.md
 %doc %{_datadir}/%{bigname}/README.md
 
 %changelog
-* Thu Jan 03 2019 Marco Favero <marco.favero@csi.it> 0.1.0-1
-- Initial build version
+* Wed Jan 09 2019 Marco Favero <marco.favero@csi.it> 0.1.2-1
+- Added keymail.js
 
 * Thu Jan 03 2019 Marco Favero <marco.favero@csi.it> 0.1.1-1
 - Added httpd.conf
+
+* Thu Jan 03 2019 Marco Favero <marco.favero@csi.it> 0.1.0-1
+- Initial build version
