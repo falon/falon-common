@@ -3,7 +3,7 @@
 
 Summary: A set of shared object used in many my projects.
 Name: FalonCommon
-Version: 0.1.2
+Version: 0.1.3
 Release: 1%{?dist}
 Group: Development/Libraries
 License: Apache-2.0
@@ -57,6 +57,9 @@ install -m0444 README.md %{buildroot}%{_datadir}/%{bigname}/README.md
 %doc %{_datadir}/%{bigname}/README.md
 
 %changelog
+* Wed Jan 24 2019 Marco Favero <marco.favero@csi.it> 0.1.3-1
+- Added features for "PHP-Cyrus-Restore" project
+
 * Wed Jan 09 2019 Marco Favero <marco.favero@csi.it> 0.1.2-1
 - Added keymail.js
 
