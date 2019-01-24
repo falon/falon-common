@@ -412,3 +412,7 @@ blockquote em{
 #statusOk       {background: initial }
 #ipfound        {background: yellow }
 
+/* PHP-Cyrus-Restore */
+#inbox {
+	background: lightyellow;
+}

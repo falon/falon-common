@@ -1,4 +1,20 @@
-  $(document).on( 'click', '#chkParent', function () {
+/* This function to fill all type=number with #inbox value
+   when #chkParent is checked */
+$(document).on( 'input', '#inbox', function ()
+{
+	function updateTime() {
+		if ($("#chkParent").prop("checked")) {
+			var timeinbox = parseInt($("#inbox").val());
+			$('#tblData tr:has(td)').find('input[type="number"]').val(timeinbox);
+		}
+	}
+	$(document).on("change keyup", "#inbox", updateTime);
+});
+
+
+/* This function to check all  type="checkbox" when
+   #chkParent is checked */
+$(document).on( 'click', '#chkParent', function () {
     var isChecked = $(this).prop("checked");
     $('#tblData tr:has(td)').find('input[type="checkbox"]').prop('checked', isChecked);
 
