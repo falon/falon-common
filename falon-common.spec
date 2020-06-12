@@ -4,7 +4,7 @@
 Summary: A set of shared object used in many my projects.
 Name: FalonCommon
 Version: 0.1.3
-Release: 1%{?dist}
+Release: 2%{?dist}
 Group: Development/Libraries
 License: Apache-2.0
 URL: https://falon.github.io/%{bigname}/
@@ -57,6 +57,9 @@ install -m0444 README.md %{buildroot}%{_datadir}/%{bigname}/README.md
 %doc %{_datadir}/%{bigname}/README.md
 
 %changelog
+* Fri Jun 12 2020 Marco Favero <marco.favero@csi.it> 0.1.3-2
+- The path is now falon-common/ and aliased as /include
+
 * Wed Jan 24 2019 Marco Favero <marco.favero@csi.it> 0.1.3-1
 - Added features for "PHP-Cyrus-Restore" project
 
