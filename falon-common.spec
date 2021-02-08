@@ -36,7 +36,7 @@ rm -rf rpm/*
 
 # Web HTTPD conf
 install -D -m0444 %{bigname}.conf %{buildroot}%{_sysconfdir}/httpd/conf.d/%{bigname}.conf
-sed -i 's|\/var\/www\/html\/include|%{_datadir}/include|' %{buildroot}%{_sysconfdir}/httpd/conf.d/%{bigname}.conf
+sed -i 's|\/var\/www\/html\/%{bigname}|%{_datadir}/include|' %{buildroot}%{_sysconfdir}/httpd/conf.d/%{bigname}.conf
 
 # Include dir
 mkdir -p %{buildroot}%{_datadir}/include
