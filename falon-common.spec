@@ -4,7 +4,7 @@
 Summary: A set of shared object used in many my projects.
 Name: FalonCommon
 Version: 0.1.3
-Release: 3%{?dist}
+Release: 4%{?dist}
 Group: Development/Libraries
 License: Apache-2.0
 URL: https://falon.github.io/%{bigname}/
@@ -36,7 +36,7 @@ rm -rf rpm/*
 
 # Web HTTPD conf
 install -D -m0444 %{bigname}.conf %{buildroot}%{_sysconfdir}/httpd/conf.d/%{bigname}.conf
-sed -i 's|\/var\/www\/html\/%{bigname}|%{_datadir}/include|' %{buildroot}%{_sysconfdir}/httpd/conf.d/%{bigname}.conf
+sed -i 's|\/var\/www\/html\/%{bigname}|%{_datadir}/%{bigname}|' %{buildroot}%{_sysconfdir}/httpd/conf.d/%{bigname}.conf
 
 # Include dir
 mkdir -p %{buildroot}%{_datadir}/include
@@ -57,7 +57,10 @@ install -m0444 README.md %{buildroot}%{_datadir}/%{bigname}/README.md
 %doc %{_datadir}/%{bigname}/README.md
 
 %changelog
-* Mon Jan 08 2021 Marco Favero <marco.favero@csi.it> 0.1.3-3
+* Tue Feb 09 2021 Marco Favero <marco.favero@csi.it> 0.1.3-4
+- Fixed include path
+
+* Mon Feb 08 2021 Marco Favero <marco.favero@csi.it> 0.1.3-3
 - Fixed include path
 
 * Fri Jun 12 2020 Marco Favero <marco.favero@csi.it> 0.1.3-2
