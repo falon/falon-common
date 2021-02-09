@@ -4,7 +4,7 @@
 Summary: A set of shared object used in many my projects.
 Name: FalonCommon
 Version: 0.1.3
-Release: 4%{?dist}
+Release: 5%{?dist}
 Group: Development/Libraries
 License: Apache-2.0
 URL: https://falon.github.io/%{bigname}/
@@ -39,24 +39,27 @@ install -D -m0444 %{bigname}.conf %{buildroot}%{_sysconfdir}/httpd/conf.d/%{bign
 sed -i 's|\/var\/www\/html\/%{bigname}|%{_datadir}/%{bigname}|' %{buildroot}%{_sysconfdir}/httpd/conf.d/%{bigname}.conf
 
 # Include dir
-mkdir -p %{buildroot}%{_datadir}/include
 mkdir -p %{buildroot}%{_datadir}/%{bigname}
-install -m0444 ajaxsbmt.js %{buildroot}%{_datadir}/include
-install -m0444 checkAll.js %{buildroot}%{_datadir}/include
-install -m0444 keymail.js %{buildroot}%{_datadir}/include
-install -m0444 pleasewait.gif %{buildroot}%{_datadir}/include
-install -m0444 style.css  %{buildroot}%{_datadir}/include
+mkdir -p %{buildroot}%{_docdir}/%{bigname}
+install -m0444 ajaxsbmt.js %{buildroot}%{_datadir}/%{bigname}
+install -m0444 checkAll.js %{buildroot}%{_datadir}/%{bigname}
+install -m0444 keymail.js %{buildroot}%{_datadir}/%{bigname}
+install -m0444 pleasewait.gif %{buildroot}%{_datadir}/%{bigname}
+install -m0444 style.css  %{buildroot}%{_datadir}/%{bigname}
 # Docs
-install -m0444 LICENSE %{buildroot}%{_datadir}/%{bigname}/LICENSE
-install -m0444 README.md %{buildroot}%{_datadir}/%{bigname}/README.md
+install -m0444 LICENSE %{buildroot}%{_docdir}/%{bigname}/LICENSE
+install -m0444 README.md %{buildroot}%{_docdir}/%{bigname}/README.md
 
 %files
-%{_datadir}/include
+%{_datadir}/%{bigname}
 %config(noreplace) %{_sysconfdir}/httpd/conf.d/%{bigname}.conf
-%license %{_datadir}/%{bigname}/LICENSE
-%doc %{_datadir}/%{bigname}/README.md
+%license %{_docdir}/%{bigname}/LICENSE
+%doc %{_docdir}/%{bigname}/README.md
 
 %changelog
+* Tue Feb 09 2021 Marco Favero <marco.favero@csi.it> 0.1.3-5
+- Fixed include path
+
 * Tue Feb 09 2021 Marco Favero <marco.favero@csi.it> 0.1.3-4
 - Fixed include path
 
